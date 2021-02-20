@@ -10,7 +10,7 @@ var _awesompleteOpts = {
     filter: Awesomplete.FILTER_STARTSWITH, // Case insensitive from start of word
 };
 var handCompletions = {};
-for (i = 1; i <= 5; i++) {
+for (i = 1; i <= 10; i++) {
     var hand = document.getElementById("hand" + i);
     handCompletions["hand" + i] = new Awesomplete(hand, _awesompleteOpts);
 }
@@ -85,7 +85,7 @@ function findFusions() {
     var monsters = [];
     var others = [];
 
-    for (i = 1; i <= 5; i++) {
+    for (i = 1; i <= 10; i++) {
         var name = $("#hand" + i).val();
         var card = getCardByName(name);
         if (card) {
@@ -126,14 +126,14 @@ function resultsClear() {
 }
 
 function inputsClear() {
-    for (i = 1; i <= 5; i++) {
+    for (i = 1; i <= 10; i++) {
         $("#hand" + i).val("");
         $("#hand" + i + "-info").html("");
     }
 }
 
 // Set up event listeners for each card input
-for (i = 1; i <= 5; i++) {
+for (i = 1; i <= 10; i++) {
     $("#hand" + i).on("change", function () {
         handCompletions[this.id].select(); // select the currently highlighted element
         if (this.value === "") {
